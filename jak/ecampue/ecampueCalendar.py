@@ -1,9 +1,23 @@
 # coding: utf-8
 
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 from icalendar import vCalAddress, vText, Calendar, Event
 import tempfile, os
+import sys
+from jak.ecampue.ecampue import Ecampue
+
+
+def makeCalendar(login, mdp, icalFileName=None):
+    ecampu = Ecampue()
+    ecampu.connect(login, mdp)
+    now = datetime.now()
+    end = now+timedelta(days=90)
+    courses = ecampu.getCourses(now, end)
+    path = None
+    if len(sys.argv) > 1:
+        path = sys.argv[1]
+    createICalFile(courses, icalFileName, path)
 
 def createICalFile(courses, name="default.ics", path=os.getcwd()):
     cal = Calendar()
