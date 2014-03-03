@@ -8,11 +8,11 @@ import sys
 from jak.ecampue.ecampue import Ecampue
 
 
-def makeCalendar(login, mdp, icalFileName=None):
+def makeCalendar(login, mdp, icalFileName=None, days=90):
     ecampu = Ecampue()
     ecampu.connect(login, mdp)
     now = datetime.now()
-    end = now+timedelta(days=90)
+    end = now+timedelta(days=days)
     courses = ecampu.getCourses(now, end)
     path = None
     if len(sys.argv) > 1:
