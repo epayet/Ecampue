@@ -32,7 +32,7 @@ class Ecampue:
 
         for i in range(len(dates)):
             if dates[i]["dateStart"] <= dateEnd:
-                course = {"name": names[i].next, "prof": profs[i].next, "dateStart": dates[i]["dateStart"], "dateEnd": dates[i]["dateEnd"]}
+                course = {"name": names[i].nextSibling, "prof": profs[i].next, "dateStart": dates[i]["dateStart"], "dateEnd": dates[i]["dateEnd"]}
                 courses.append(course)
 
         return courses
