@@ -85,11 +85,13 @@ class Ecampue:
         return days[left]
 
     def getCourseLength(self, height):
-        length = {20: 2, 41: 4}
+        length = {20: 2, 41: 4,
+                  16: 2}
         return length[height]
 
     def getCourseStartHour(self, top):
-        start = {105: 9, 126: 11, 157: 14, 179: 16}
+        start = {105: 9, 126: 11, 157: 14, 179: 16,
+                 122: 11, 148: 14, 165: 16, 182: 18}
         return start[top]
 
     def getCoursesNamesTags(self, html):
