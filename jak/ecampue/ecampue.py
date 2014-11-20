@@ -86,7 +86,7 @@ class Ecampue:
 
     def getCourseLength(self, height):
         length = {20: 2, 41: 4,
-                  16: 2}
+                  16: 2, 33: 4}
         return length[height]
 
     def getCourseStartHour(self, top):
