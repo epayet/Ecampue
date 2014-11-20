@@ -32,8 +32,8 @@ def createICalFile(courses, name="default.ics", path=os.getcwd()):
         if isinstance(course["prof"], basestring):
             summary += " : " + course["prof"]
         event.add('summary', summary)
-        event.add('dtstart', datetime(course["dateStart"].year, course["dateStart"].month, course["dateStart"].day, course["dateStart"].hour-2, 0, 0, tzinfo=pytz.utc))
-        event.add('dtend', datetime(course["dateEnd"].year, course["dateEnd"].month, course["dateEnd"].day, course["dateEnd"].hour-2, 0, 0, tzinfo=pytz.utc))
+        event.add('dtstart', datetime(course["dateStart"].year, course["dateStart"].month, course["dateStart"].day, course["dateStart"].hour-1, 0, 0, tzinfo=pytz.utc))
+        event.add('dtend', datetime(course["dateEnd"].year, course["dateEnd"].month, course["dateEnd"].day, course["dateEnd"].hour-1, 0, 0, tzinfo=pytz.utc))
         #event.add('dtstamp', datetime(2014, 2, 22, 0, 10, 0, tzinfo=pytz.utc))
 
         #A property with parameters. Notice that they are an attribute on the value:
